@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://cxa2ip22ne5v0"]
+
+[ext_resource type="Script" uid="uid://btx2d3ndp10ki" path="res://main.gd" id="1_lquwl"]
+[ext_resource type="Script" uid="uid://bjjvpr1420hp6" path="res://sprite_flip.gd" id="2_lquwl"]
+[ext_resource type="Script" uid="uid://d103pm2naiin0" path="res://score_label.gd" id="3_h2yge"]
+[ext_resource type="Texture2D" uid="uid://cw1cffsjse35i" path="res://IMG_2277-removebg-preview.png" id="3_lquwl"]
+[ext_resource type="PackedScene" uid="uid://bg1amsok5yuui" path="res://acorn.tscn" id="4_1bvp3"]
+[ext_resource type="Script" uid="uid://bm0oa85ea82ab" path="res://label.gd" id="6_7mycd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fobxo"]
+radius = 55.145264
+
+[node name="Main" type="Node2D" unique_id=686669886]
+script = ExtResource("1_lquwl")
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=147279177]
+script = ExtResource("2_lquwl")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=569041171]
+position = Vector2(2, 0)
+scale = Vector2(0.23104408, 0.2290099)
+texture = ExtResource("3_lquwl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1205790141]
+shape = SubResource("CircleShape2D_fobxo")
+
+[node name="ScoreLabel" type="Label" parent="." unique_id=1627387434]
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("3_h2yge")
+
+[node name="Acorn" parent="." unique_id=1893825646 groups=["balloons"] instance=ExtResource("4_1bvp3")]
+position = Vector2(239, 183)
+
+[node name="Acorn2" parent="." unique_id=1484530508 groups=["balloons"] instance=ExtResource("4_1bvp3")]
+position = Vector2(388, 433)
+
+[node name="Acorn3" parent="." unique_id=1239951096 groups=["balloons"] instance=ExtResource("4_1bvp3")]
+position = Vector2(567, 273)
+
+[node name="Acorn4" parent="." unique_id=1524976569 groups=["balloons"] instance=ExtResource("4_1bvp3")]
+position = Vector2(840, 433)
+
+[node name="Acorn5" parent="." unique_id=565247970 groups=["balloons"] instance=ExtResource("4_1bvp3")]
+position = Vector2(128, 573)
+
+[node name="Acorn6" parent="." unique_id=146883399 groups=["balloons"] instance=ExtResource("4_1bvp3")]
+position = Vector2(675, 192)
+
+[node name="Acorn7" parent="." unique_id=1790647913 groups=["balloons"] instance=ExtResource("4_1bvp3")]
+position = Vector2(1021, 99)
+
+[node name="Acorn8" parent="." unique_id=462213762 groups=["balloons"] instance=ExtResource("4_1bvp3")]
+position = Vector2(894, 271)
+
+[node name="Acorn9" parent="." unique_id=1830523308 groups=["balloons"] instance=ExtResource("4_1bvp3")]
+position = Vector2(579, 538)
+
+[node name="Acorn10" parent="." unique_id=1768178507 groups=["balloons"] instance=ExtResource("4_1bvp3")]
+position = Vector2(177, 317)
+
+[node name="Acorn11" parent="." unique_id=128685693 groups=["balloons"] instance=ExtResource("4_1bvp3")]
+position = Vector2(407, 126)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=342074276]
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=1584750951]
+modulate = Color(0.23137255, 1, 1, 1)
+offset_left = 386.0
+offset_top = 22.0
+offset_right = 700.0
+offset_bottom = 45.0
+text = "Well done, you collected all the balloons!"
+script = ExtResource("6_7mycd")
